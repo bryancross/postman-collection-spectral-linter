@@ -7,6 +7,7 @@ import sys
 from collections import defaultdict
 
 def fetch_json_from_postman(api_key, uid, resource_type):
+    print("Fetching JSON data from Postman API...")
     headers = {'x-api-key': api_key}
     if resource_type == "collection":
         url = f"https://api.postman.com/collections/{uid}"
@@ -101,7 +102,7 @@ def main():
         ruleset_path = "./rulesets/collection-rules.yaml" if resource_type == "collection" else "./rulesets/rules.yaml"
 
     # Fetch JSON data from Postman API
-    print("Fetching JSON data from Postman API...")
+    
     if (args.collection or args.workspace):
         source_json = fetch_json_from_postman(api_key, uid, resource_type)
         
