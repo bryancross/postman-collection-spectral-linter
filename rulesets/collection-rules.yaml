@@ -11,7 +11,7 @@ functions:
 rules:
   no-internal-header:
     message: Internal header {{value}} should be removed {{path}} 
-    given: $.item..request.header[*]
+    given: $..item..request.header[*]
     severity: error
     then:
       field: key
@@ -21,7 +21,7 @@ rules:
   no-null-query-params:
     description: No null or empty query params
     message: query parameter {{property}} at {{path}} should not be blank/null
-    given: $.item..request.url.query[*]
+    given: $..item..request.url.query[*]
     severity: error
     then:
       field: value

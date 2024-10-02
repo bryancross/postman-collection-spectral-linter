@@ -104,6 +104,7 @@ def main():
     print("Fetching JSON data from Postman API...")
     if (args.collection or args.workspace):
         source_json = fetch_json_from_postman(api_key, uid, resource_type)
+        
     elif(args.path):
         with open(args.path, "r") as f:
             source_json = json.load(f)
