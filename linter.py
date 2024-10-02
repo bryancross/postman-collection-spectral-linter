@@ -27,7 +27,7 @@ def lint_json(file_path, ruleset_path):
             [spectral_path, "lint", file_path, "--ruleset", ruleset_path, "-f", "json"],
             capture_output=True, text=True
         )
-        print(result.stdout);
+        
         return json.loads(result.stdout)
     except subprocess.CalledProcessError as e:
         print(f"Spectral linting failed with error: {e.stderr}")
